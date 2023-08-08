@@ -12,22 +12,23 @@ const body = document.querySelector("body")
 score1.textContent = `Player Score : ${playerScore}`;
 score2.textContent = `Computer Score : ${computerScore}`;
 
-
+//Function to reset the game
 function refreshPage(){
     window.location.reload(true);
 }
 
-
+//Function that take player choice and play it with computer
 function playRound(playerChoice,computerChoice){
     let player = playerChoice.toLowerCase()
     let computer = computerChoice
+    //Statemen if the player win the round
     if (((player == 'rock' && computer == 'scrissor') || 
     (player == 'scrissor' && computer == 'paper') || 
     (player == 'paper' && computer == 'rock')) && playerScore+computerScore < 5){
         text.textContent = `You win, ${player} beat ${computer}`;
         playerScore++;
     }
-
+    //Statement if the player lose the round
     else if (((player == 'rock' && computer == 'paper') || 
     (player == 'paper' && computer == 'scrissor') || 
     (player == 'scrissor' && computer == 'rock')) && playerScore+computerScore < 5){
@@ -46,17 +47,20 @@ function playRound(playerChoice,computerChoice){
     
 }
 
+//function that return a random number from 1 to 3
 function random(){
     let number = Math.floor(Math.random() * 3 - 1 + 1 ) + 1 ;
     return number;
 }
 
+//function that make computer choice the RPS use the random number from function random()
 function computerChoice(){
     const choice = ["rock","paper","scrissor"];
     let num = random();
     return choice[num - 1];
     
 }
+
 
 function getPlayerSelection(e){
     let playerChoice = (e.target.id);
