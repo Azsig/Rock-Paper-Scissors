@@ -8,9 +8,7 @@ body{
 
 
 
-#gunting,
-#kertas,
-#batu{
+.btn{
     padding: 20px;
     margin: 5px;
     background-color: crimson;
@@ -20,9 +18,7 @@ body{
 
 }
 
-#gunting:hover,
-#kertas:hover,
-#batu:hover{
+.btn:hover{
     transform: scale(1.2);
     border-color: blue;
 }
@@ -31,4 +27,17 @@ body{
     display: flex;
     justify-content: space-around;
     gap: 100px;
+}
+
+.reset{
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+.reset:hover{
+    transform: scale(1.1);
+    border-width: 2px;
+    border-color: rgb(64, 65, 66);
+    border-style: solid;
 }
